@@ -1,0 +1,147 @@
+.inner {
+  border: 0;
+  margin: 0;
+
+  @include bp(med) {
+    display: flex;
+  	overflow: hidden;
+  	margin: 0px 10px 10px 10px;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	flex: 1;
+  	border-color: #000;
+  	box-shadow: 0 0 20px 7px #1b1b1b;
+  	transition: margin 250ms cubic-bezier(.25,.46,.45,.94),border .4s cubic-bezier(.55,.085,.68,.53);
+  	text-decoration: none;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 90%;
+}
+
+/* Make sure logo link wraps around logo image. */
+  .site-logo img {
+  border-radius: 100%;
+  width: 50px;
+  }
+
+  .custom-logo-link {
+    //border-bottom: 1px dotted #e5e5e5;
+    margin-right: 2em;
+
+
+    @include bp(med) {
+      padding-top: 0;
+    }
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .site-main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.link__dribble {
+    a {
+        color: $color__link__dribbble;
+    }
+}
+
+date {
+    font-weight: 600;
+}
+
+.card {
+    border-top: 4px solid #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 400px;
+    padding: 20px;
+}
+
+.card:hover {
+  border-top: 4px solid red;
+  animation: AnimationName 59s ease infinite;
+}
+
+.card p {
+    flex: 1 0 auto;
+}
+
+.card a:after {
+  content: ' →';
+
+}
+
+.card h6 {
+    color: #4083ff;
+}
+
+.text {
+    color: #fff;
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.align-bottom {
+    position: absolute;
+    bottom: 32px;
+}
+
+.short {
+    //width: 64px;
+    background: 2px solid #e7e7e7;
+    display: block;
+}
+
+.approach-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    h2 {
+        font-family: $sans-serif;
+        color: #4083ff;
+    }
+
+    h4 {
+        padding: 10px;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+
+
+.c-block {
+  margin: 10px 0;
+}
+.c-block--boxed {
+  //background: #efefef;
+  padding: 1.5rem;
+  box-shadow: 0 10px 0 -5px #dedcb9;
+  font-size:.875rem;
+}
+
+.cat-container {
+  display: flex;
+  flex-direction: column;
+  @include bp(med) {
+      align-items: center;
+  }
+}

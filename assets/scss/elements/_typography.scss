@@ -1,0 +1,233 @@
+/*-------------------------------------------
+    Typography
+-------------------------------------------*/
+
+html {
+	font-size: $contain;
+	line-height: $line-height-base;
+	font-weight: $font__weight-base;
+	text-size-adjust: 100%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-overflow-scrolling: touch;
+		-webkit-tap-highlight-color: $color__coolgray;
+
+	@include bp(small) {
+		font-size: $contain-sm;
+	}
+
+	@include bp(med) {
+		font-size: $contain-md;
+	}
+
+	@include bp(large) {
+		font-size: $contain-lg;
+	}
+}
+
+body {
+	font-style: normal;
+	color: $color__text-main;
+	font-size: $base;
+	font-family: $font__body;
+	text-rendering: optimizeLegibility;
+	background: $color__background-body;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: $link-color;
+	background: transparent;
+	transition: color 0.2s ease-out;
+	outline: 0;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: $link-hover;
+		cursor: pointer;
+		transition: all 0.15s ease;
+	}
+
+	&:active {
+		color: $link-active;
+	}
+
+	// mobile tap color
+	&:link {
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3);
+	}
+
+	p &,
+	li & {
+		//border-bottom: $accent-border;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+	line-height: $line-height-sm;
+}
+
+h1, h2 {
+	font-family: $font__heading;
+}
+
+h3, h4, h5, h6 {
+	font-family: $font__body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color__text-heading;
+	font-weight: $font__weight-heading;
+
+	a {
+		font-weight: $font__weight-heading;
+	}
+}
+
+/* block level */
+h1, .h1 {
+	font-size: $h2;
+
+	@include bp(small) {
+		font-size: $h1;
+	}
+
+	margin-top: $h3;
+}
+
+h2, .h2 {
+	font-size: $h2;
+	margin-top: $h2;
+}
+
+h3, .h3 {
+	font-size: $h3;
+	margin-top: $h3;
+}
+
+h4, .h4 {
+	font-size: $h4;
+	margin-bottom: $h5;
+}
+
+h5, .h5 {
+	font-size: $h5;
+	margin-top: $h3;
+	@include upperspace;
+}
+
+h6, .h6 {
+	font-size: $h6;
+	margin-top: $h4;
+}
+
+p {
+	font-size: $base;
+	margin-top: $base;
+	margin-bottom: 0;
+}
+
+small {
+	font-size: $sml;
+}
+
+strong {
+	font-weight: normal;
+	font-weight: $font__weight-strong;
+}
+
+blockquote, q {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: "";
+		content: none;
+	}
+}
+
+blockquote {
+	margin: 0 1.5em;
+	padding-top: $base;
+	padding-bottom: $base;
+	padding-left: $base;
+	border-left: 2px solid $orange;
+
+	> p {
+		margin-top: 0;
+		font-style: italic;
+		font-weight: 400;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+	font-style: normal;
+	line-height: inherit;
+}
+
+code, kbd, tt, var {
+	font-family: $monospace;
+	font-style: normal;
+	font-size: 92%;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+sub, sup {
+	line-height: 0;
+}
+
+abbr, abbr[title], acronym {
+	border: none;
+	font-size: 75%;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: help;
+}
+
+mark, ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+video {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+}
+
+svg {
+	display: block;
+	width: 100%;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+big {
+	font-size: 125%;
+}
+
+.lead {
+	font-size: $lead;
+	font-weight: $lead-weight;
+}
+
+::selection {
+	background: $color__selection;
+	color: $white;
+}
+
+::-moz-selection {
+	background: $color__selection;
+	color: $white;
+}

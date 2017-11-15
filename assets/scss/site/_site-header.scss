@@ -1,0 +1,106 @@
+.site-header {
+  display: flex;
+  flex: 0 0 auto;
+  height: 80px;
+  //position: fixed;
+  width: 100%;
+  background-color: #212121;
+}
+
+.customize-partial-edit-shortcuts-shown {
+
+  .custom-logo-link {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: -30px; // Pull it to the left, to keep the logo centered when the edit link is shown.
+
+    .customize-partial-edit-shortcut,
+    .customize-partial-edit-shortcut-button {
+      position: relative;
+      float: none;
+    }
+
+    .customize-partial-edit-shortcut-button {
+      left: -10px;
+    }
+
+    .customize-partial-edit-shortcut {
+      height: auto;
+      left: initial;
+      width: auto;
+    }
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.hero {
+  height: auto;
+  position: relative;
+  top: 48%;
+  transform: translateY(0%);
+}
+
+.stripe::after {
+  background: white;
+  bottom: 0px;
+  content: '';
+  height: 70px;
+  position: absolute;
+  transform-origin: left bottom;
+  transform: skewY(4deg);
+  width: 100%;
+  z-index: 1;
+}
+
+.site-title {
+  font-family: $sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.hero-text {
+  color: #fff;
+  font-family: $hero-text;
+
+  @include bp(md) {
+    font-size: 1.2rem;
+  }
+
+  @include bp(large) {
+    font-size: 5.3rem;
+    font-weight: 600;
+    margin-bottom: .5em;
+    //background: #ffe4e4;
+    //padding: 1em;
+  }
+}
+
+span[data-descr] {
+  position: relative;
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}

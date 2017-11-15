@@ -1,0 +1,36 @@
+// Padding
+$padding-section: 114px 0;
+$padding-row: 10px;
+
+.padding-section {
+  padding: $padding-section;
+}
+
+.padding-row {
+  padding: $padding-row;
+}
+
+.page--contact {
+  padding: 6em 0;
+  //background-color: #1b1a1a;
+}
+
+.page--writing {
+  p {
+    font-size: .8rem;
+  }
+}
+
+.page--resume {
+  p, date {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+}
+
+
+.block-experience {
+  margin-bottom: 2.5em;
+  border-bottom: 1px solid #23292c;
+}

@@ -1,0 +1,208 @@
+// Uppercase and letterspacing.
+@mixin upperspace {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.upperspace {
+    @include upperspace;
+}
+// Small, sans-serif text.
+// Used primarily for forms and complimentary information.
+@mixin meta($color: $color__text-light) {
+    font-size: $xsml;
+}
+
+.meta {
+    @include meta;
+}
+
+.flex-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt {
+    margin-top: 2em;
+}
+
+.mb {
+    margin-bottom: 2em;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// Based on WP's naming conventions
+.alignleft {
+    float: left;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.alignright {
+    float: right;
+}
+
+.affix-top {
+  //position: fixed;
+  width: 100%;
+
+  p {
+    font-size: .88rem;
+  }
+}
+
+
+// Layout helpers
+
+.full-image {
+    width: 100%;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.is-invisible {
+    visibility: none !important;
+}
+
+.no-bullets {
+    list-style: none;
+}
+
+.bulleted {
+    list-style: disc;
+}
+
+// Spacers
+
+.spacer-top {
+    margin-top: $base;
+}
+
+.spacer-left {
+  margin-left: $base;
+}
+
+.spacer-right {
+  margin-right: $base;
+}
+
+.spacer-bot {
+    margin-bottom: $base;
+}
+
+.rm-margin {
+  margin: 0;
+}
+
+// Prototyping Classes
+
+.flex {
+    display: flex;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.go-top {
+    margin-top: 2rem;
+}
+
+
+// Misc
+// Environmental Notice
+.env-notice {
+    color: $white;
+    position: fixed;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    font-size: $h6;
+    @include upperspace;
+    font-weight: $font__weight-strong;
+    padding: $xsml $sml;
+    background-color: $black;
+    z-index: 1;
+
+    &.development {
+        background-color: royalblue;
+    }
+
+    &.staging {
+        background-color: indianred;
+    }
+}
+
+.edit-link {
+    font-size: $sml;
+    @include upperspace;
+    font-weight: $font__weight-strong;
+}
+
+.hide-for-small-down {
+    @include bp(sm) {
+        display: none;
+        visibility: none;
+    }
+}
+
+.hide_on_mobile {
+    @media only screen and (max-width: $screen-sm) {
+        display: none;
+        visibility: none;
+    }
+}
+// Fix Sticky Admin Bar
+.admin-bar .sticky-header {
+    top: 32px;
+}
+// Testing for Page Overflow
+// Uncomment for use
+// * {
+//    outline: 1px solid red;
+// }
+
+.fill-screen {
+    position: absolute;
+    object-fit: cover;
+    min-height: 100vh;
+    height: 100%;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    width: 100%;
+}

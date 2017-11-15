@@ -1,0 +1,102 @@
+.page--projects {
+    position: relative;
+
+        li {
+        position: relative;
+        list-style: none;
+        }
+
+        img {
+            display: block;
+        }
+}
+
+.page--projects a.hover {
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $white;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.page--projects .text {
+    color: #fff;
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .page--projects .text {
+        padding: 25px;
+    }
+}
+
+.page--projects .align-bottom {
+    position: absolute;
+    bottom: 32px;
+}
+
+@media only screen and (max-width: 991px) {
+    .page--projects .align-bottom {
+        bottom: 22px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .page-projects .align-bottom {
+        bottom: 16px;
+    }
+}
+
+.page--projects .mask {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.87);
+}
+
+.page--projects h3 {
+    font-size: 34px;
+    font-size: 2.125rem;
+    line-height: 1.17647em;
+    font-weight: 400;
+    letter-spacing: 0em;
+}
+
+@media only screen and (max-width: 991px) {
+    .page--projects h3 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .page--projects h3 {
+        font-size: $h6;
+        line-height: 19px;
+    }
+}
+
+.affix {
+    top: 20px;
+}
+
+.affix-bottom {
+    position: absolute;
+}

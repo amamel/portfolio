@@ -1,0 +1,66 @@
+/*-------------------------------------------
+    Global
+-------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	height: 100%; /* needed for proper layout */
+	margin: 0;
+	min-width: 320px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+ul,
+ol,
+li {
+	margin-top: $base;
+}
+
+hr {
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+	border-top: $accent-border;
+	height: 0;
+	margin-bottom: 1.5em;
+}
+
+img,
+picture {
+	max-width: 100%;
+	font-style: italic;
+	vertical-align: middle;
+	display: inline-block;
+	border: 0;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+pre,
+code {
+	white-sapce: pre-wrap;
+}

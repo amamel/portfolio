@@ -1,0 +1,102 @@
+// General WP Styling
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published){
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+// My stuff
+.entry-content p {
+  margin-bottom: 1.5rem;
+  //line-height: 2;
+  font-size: .875rem;
+  @include bp(med) {
+    font-size: 1rem;
+  }
+}
+
+.entry-content a {
+  position: relative;
+  display: inline-block;
+  border-bottom: 3px solid $orange;
+
+  &::before {
+    position: absolute;
+    top: 100%;
+    content: attr(href);
+    opacity: 0;
+    display: block;
+    transition: .25s all;
+    height: 0;
+    overflow: hidden;
+    padding: .25em 1em;
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+    font-size: .7em;
+    color: #555;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      display: block;
+      height: auto;
+    }
+  }
+}
+
+.entry-meta {
+  margin-bottom: 2.64rem;
+  font-size: .88rem;
+  line-height: 1.3;
+  color: #999;
+  padding-top: .88rem;
+}
+
+.post-date {
+  font-weight: 600;
+}
+
+.entry-header {
+  margin-bottom: 40px;
+}
+
+.post-content p {
+  margin-top: 1.1rem;
+  font-size: 1.1rem;
+}
+
+.dates {
+  font-size: $sml;
+  font-weight: 600;
+  float: right;
+}
+
+
+.location {
+  font-size: $sml;
+}
+
+.post-listing-archive {
+  list-style: none;
+line-height: 2;
+margin-bottom: 10px;
+border-bottom: 1px solid hsla(0,17%,83%,.08);
+}
