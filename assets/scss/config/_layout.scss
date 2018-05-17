@@ -1,4 +1,63 @@
 .cover {
-  height: 70vh;
-  align-items: center;
+    height: 70vh;
+    align-items: center;
+}
+
+// Evenly distributes child elements within a parent element
+.evenly-distributed-children {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Flexbox Centering
+.flexbox-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Gives text a gradient color
+.gradient-text {
+    background: -webkit-linear-gradient(pink, red);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+// Horizontally and vertically centers a child element within a parent element using grid.
+.grid-centering {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.overflow-scroll-gradient {
+    position: relative;
+}
+
+.overflow-scroll-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 240px;
+    height: 25px;
+    background: linear-gradient( rgba(255, 255, 255, 0.001), white);
+    /* transparent keyword is broken in Safari */
+    pointer-events: none;
+}
+
+.overflow-scroll-gradient__scroller {
+    overflow-y: scroll;
+    background: white;
+    width: 240px;
+    height: 200px;
+    padding: 15px 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+// Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e., its width to height ratio remains constant).
+.constant-width-to-height-ratio {
+    background: #333;
+    width: 50%;
+    padding-top: 50%;
 }

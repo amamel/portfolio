@@ -407,6 +407,60 @@ template {
   -ms-flex-align: center;
   align-items: center; }
 
+.evenly-distributed-children {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.flexbox-centering {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.gradient-text {
+  background: -webkit-linear-gradient(pink, red);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; }
+
+.grid-centering {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.overflow-scroll-gradient {
+  position: relative; }
+
+.overflow-scroll-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 240px;
+  height: 25px;
+  background: linear-gradient(rgba(255, 255, 255, 0.001), white);
+  /* transparent keyword is broken in Safari */
+  pointer-events: none; }
+
+.overflow-scroll-gradient__scroller {
+  overflow-y: scroll;
+  background: white;
+  width: 240px;
+  height: 200px;
+  padding: 15px 0;
+  line-height: 1.2;
+  text-align: center; }
+
+.constant-width-to-height-ratio {
+  background: #333;
+  width: 50%;
+  padding-top: 50%; }
+
 /*-------------------------------------------
     Media Queries
 -------------------------------------------*/
@@ -580,7 +634,8 @@ template {
 #container-pixie {
   overflow: hidden;
   position: relative;
-  max-height: 700px;
+  height: 550px !important;
+  max-height: 550px !important;
   width: 100%; }
 
 #pixie {
@@ -598,6 +653,42 @@ template {
   100% {
     transform: translatey(0px); } }
 
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca; }
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out; }
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left; }
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite; }
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -608,7 +699,7 @@ template {
   word-wrap: normal !important;
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
   .screen-reader-text:focus {
-    background-color: #999999;
+    background-color: #EEEEEE;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
@@ -630,6 +721,34 @@ template {
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0; }
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translate3d(0, -50px, 0);
+  transition: transform .5s ease-out; }
+
+.pace.pace-active {
+  transform: translate3d(0, 0, 0); }
+
+.pace .pace-progress {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 10px;
+  background: #29d;
+  pointer-events: none; }
 
 /*-------------------------------------------
     Typography
@@ -679,49 +798,77 @@ a {
   a:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0;
   line-height: 1.3; }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Heebo", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif; }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Heebo", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #e5e5e5;
   font-weight: 600; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
     font-weight: 600; }
 
 /* block level */
-h1, .h1 {
+h1,
+.h1 {
+  color: #FFF;
   font-size: 2.64rem;
+  margin-bottom: 2.2rem;
   margin-top: 2.2rem; }
   @media (min-width: 520px) {
-    h1, .h1 {
+    h1,
+    .h1 {
       font-size: 3.3rem; } }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 2.64rem;
   margin-top: 2.64rem; }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 2.2rem;
   margin-top: 2.2rem; }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.43rem;
   margin-bottom: 0.88rem; }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 0.88rem;
   margin-top: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1.1rem;
   margin-top: 1.43rem; }
 
@@ -734,12 +881,16 @@ small {
   font-size: 0.88rem; }
 
 strong {
+  color: #fff;
   font-weight: normal;
   font-weight: 600; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
+  blockquote:before, blockquote:after,
+  q:before,
+  q:after {
     content: "";
     content: none; }
 
@@ -759,18 +910,27 @@ address {
   font-style: normal;
   line-height: inherit; }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-style: normal;
   font-size: 92%; }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic; }
 
-sub, sup {
+sub,
+sup {
   line-height: 0; }
 
-abbr, abbr[title], acronym {
+abbr,
+abbr[title],
+acronym {
   border: none;
   font-size: 75%;
   letter-spacing: 0.2em;
@@ -778,7 +938,8 @@ abbr, abbr[title], acronym {
   text-decoration: none;
   cursor: help; }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none; }
 
@@ -805,16 +966,28 @@ big {
   font-weight: 600; }
 
 ::-moz-selection {
-  background: #FFC000;
+  background: #9fd7ff;
   color: white; }
 
 ::selection {
-  background: #FFC000;
+  background: #9fd7ff;
   color: white; }
 
 ::-moz-selection {
-  background: #FFC000;
+  background: #9fd7ff;
   color: white; }
+
+.truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px; }
+
+.etched-text {
+  text-shadow: 0 2px white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b8bec5; }
 
 .button--contact {
   background: blue;
@@ -825,7 +998,7 @@ big {
 .c-btn {
   color: #FFF;
   display: inline-block;
-  border-bottom: 4px solid #ff8d00;
+  border-bottom: 4px solid #9fd7ff;
   text-decoration: none;
   text-transform: uppercase;
   font-family: "Heebo", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
@@ -839,7 +1012,7 @@ big {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #ff8d00;
+    background: #9fd7ff;
     height: 0%;
     transition: .2s all;
     left: 0;
@@ -848,7 +1021,7 @@ big {
     padding-left: 3.3rem;
     padding-right: 3.3rem;
     color: #fff;
-    border-color: #FF521B; }
+    border-color: #9fd7ff; }
     .c-btn:hover:before {
       height: 100%; }
 
@@ -1048,7 +1221,7 @@ a {
 .c-btn {
   color: #FFF;
   display: inline-block;
-  border-bottom: 4px solid #ff8d00;
+  border-bottom: 4px solid #9fd7ff;
   text-decoration: none;
   text-transform: uppercase;
   font-family: "Heebo", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
@@ -1062,7 +1235,7 @@ a {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #ff8d00;
+    background: #9fd7ff;
     height: 0%;
     transition: .2s all;
     left: 0;
@@ -1071,14 +1244,38 @@ a {
     padding-left: 3.3rem;
     padding-right: 3.3rem;
     color: #fff;
-    border-color: #FF521B; }
+    border-color: #9fd7ff; }
     .c-btn:hover:before {
       height: 100%; }
 
 table {
+  border-collapse: collapse;
+  border-spacing: 0;
   margin-bottom: 1.1rem;
   font-size: 0.88rem;
   width: 100%; }
+
+td {
+  padding: 20px 29px;
+  border-color: #3a3a59;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+  td h5 {
+    margin-top: 0; }
+
+th {
+  background-color: #1d1d26;
+  border-color: #3a3a59;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+  th h5 {
+    margin-top: 0; }
 
 ul, ol {
   margin: 0; }
@@ -2030,9 +2227,9 @@ nav ul li a:visited {
   display: flex;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 80px;
+  height: 150px;
   width: 100%;
-  background-color: #212121; }
+  background-color: rbga(0, 0, 0, 0.2); }
 
 .customize-partial-edit-shortcuts-shown .custom-logo-link {
   -ms-flex-align: center;
@@ -2092,7 +2289,7 @@ nav ul li a:visited {
   font-family: "Heebo", sans-serif; }
   @media (min-width: 1100px) {
     .hero-text {
-      font-size: 5.3rem;
+      font-size: 4.5rem;
       font-weight: 600;
       margin-bottom: .5em; } }
 
@@ -2115,14 +2312,19 @@ span[data-descr]:hover::after {
   z-index: 1; }
 
 .site-footer {
+  background-color: black;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-top: 6rem;
   padding: 60px 0;
   width: 100%; }
+  .site-footer a {
+    font-size: 16px; }
 
 .copyright {
   padding-bottom: 20px; }
+  .copyright p {
+    font-size: 16px; }
 
 .padding-section {
   padding: 114px 0; }
@@ -2206,10 +2408,6 @@ span[data-descr]:hover::after {
 .entry-header {
   margin-bottom: 40px; }
 
-.post-content p {
-  margin-top: 1.1rem;
-  font-size: 1.1rem; }
-
 .dates {
   font-size: 0.88rem;
   font-weight: 600;
@@ -2227,8 +2425,7 @@ span[data-descr]:hover::after {
 .page--projects {
   position: relative; }
   .page--projects li {
-    position: relative;
-    list-style: none; }
+    position: relative; }
   .page--projects img {
     display: block; }
 

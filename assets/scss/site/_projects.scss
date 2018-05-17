@@ -1,14 +1,11 @@
 .page--projects {
     position: relative;
-
-        li {
+    li {
         position: relative;
-        list-style: none;
-        }
-
-        img {
-            display: block;
-        }
+    }
+    img {
+        display: block;
+    }
 }
 
 .page--projects a.hover {

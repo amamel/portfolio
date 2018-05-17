@@ -1,41 +1,83 @@
 // Fireflies
-
 #container-pixie {
-  overflow: hidden;
-  position: relative;
-  max-height: 700px;
-  width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 550px !important;
+    max-height: 550px !important;
+    width: 100%;
 }
 
 #pixie {
-  z-index: $zbot;
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: $screen-lg;
-
-  @include bp(sm) {
-  	max-width: 320px;
-  }
-
-  @include bp(md) {
-  	width: $screen-md;
-  }
+    z-index: $zbot;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: $screen-lg;
+    @include bp(sm) {
+        max-width: 320px;
+    }
+    @include bp(md) {
+        width: $screen-md;
+    }
 }
 
 // Floating box
-
 @keyframes float {
-	0% {
-		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		//box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-20px);
-	}
-	100% {
-		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
+    0% {
+        //box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        //box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        //box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
+
+// Creates an animated underline effect when the text is hovered over.
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+// Creates a donut spinner that can be used to indicate the loading of content.
+@keyframes donut-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.donut {
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #7983ff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: donut-spin 1.2s linear infinite;
 }

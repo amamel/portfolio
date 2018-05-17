@@ -2,50 +2,35 @@
     Definitions: Colors
 -------------------------------------------*/
 
-$dark-blue: #FFC000;
-$light-blue: rgba(70, 93, 104, 0.4);
-$vlight-blue: #9fd7ff;
-
-$grey: #999999;
-$dark-grey: #272727;
-
-$white: white;
-$white-alt: #f7f7f7;
-
-$black: black;
 $blue: blue;
+$green: green;
 $orange: #ff8d00;
 $red: red;
+$grey: #EEEEEE;
+$dark-grey: #272727;
+$white: white;
+$white-alt: #f7f7f7;
+$black: black;
 $yellow: yellow;
-$green: green;
 $l-yellow: lighten($yellow, 5%);
-
+$light-blue: rgba(70, 93, 104, 0.4);
+$vlight-blue: #9fd7ff;
 // Semantic variable names
 $accent-vlight: $white-alt;
 $accent-light: $vlight-blue;
 $accent-med: $light-blue;
-$accent-dark: darken($dark-blue,10%);
+$accent-dark: darken($dark-grey, 10%);
 $accent-vdark: #242F4A;
-
 $accent-alt: $red;
-
-$alert-danger: 		darken($red, 20%);
-$alert-warning: 	$l-yellow;
-$alert-info: 			$dark-blue;
-$alert-success: 	$green;
-
-$text-dark: 		$accent-vdark;
-$text-med: 			$grey;
-$text-medlight: lighten($text-med, 20%);
-$text-light: 		$white;
-
-$link-color:		$orange;
-$link-hover: 		$accent-vlight;
-$link-active:   $orange;
-$link-visited: 	$orange;
-
+$alert-danger: darken($red, 20%);
+$alert-warning: $l-yellow;
+$alert-info: $blue;
+$alert-success: $green;
+$link-color: $orange;
+$link-hover: $accent-vlight;
+$link-active: $orange;
+$link-visited: $orange;
 // Components
-
 // Colors
 $color__background-body: #141414;
 $color__background-hr: #ccc;
@@ -57,10 +42,8 @@ $color__text-screen: #21759b;
 $color__text-main: gainsboro;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-
 // Color selection
-$color__selection: $dark-blue;
-
+$color__selection: $vlight-blue;
 // Text colors
 $color__text-light: #fafafa !default;
 $color__text-med: #f5f5f5 !default;
@@ -70,7 +53,6 @@ $color__text-heading: #e5e5e5 !default;
 $color__warmgray: #2B2A2A !default;
 $color__coolgray: #534F4D !default;
 $color__offwhite: #D7D2CB !default;
-
 // Social
 $color__link__twitter: #55ACEE !default;
 $color__link__facebook: #3F5D9A !default;
@@ -79,7 +61,6 @@ $color__link__github: #4183C4 !default;
 $color__link__linkedin: #127FBA !default;
 $color__link__youtube: #cd201f !default;
 $color__link__instagram: #405de6 !default;
-
 $link__decoration: none !default;
 $link__decoration-hover: underline !default;
 
@@ -89,29 +70,22 @@ $link__decoration-hover: underline !default;
 
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-
 // Rem Unit Scale
-
 $contain-lg: 110% !default;
 $contain-md: 102% !default;
 $contain-sm: 98% !default;
 $contain: 90% !default;
-
 $base: 1.1rem !default;
-
 $line-height-base: 1.5 !default;
 $line-height-sm: 1.3 !default;
-
 $xsml: $base*0.6 !default;
 $sml: $base*0.8 !default;
-
 $h1: $base*3 !default;
 $h2: $base*2.4 !default;
 $h3: $base*2 !default;
 $h4: $base*1.3 !default;
 $h5: $sml !default;
 $h6: $base !default;
-
 $lead: 1.25rem !default;
 $lead-weight: 600 !default;
 
@@ -120,23 +94,50 @@ $lead-weight: 600 !default;
 -------------------------------------------*/
 
 // Remember to make this an actual serif stack at some point
-$serif: 'Heebo', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif !default;
-$sans-serif: 'Heebo', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif !default;
-$hero-text: 'Heebo', sans-serif !default;
-$condensed-sans-serif: 'Oswald', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif !default;
-$monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-
+$serif: 'Heebo',
+-apple-system,
+system-ui,
+BlinkMacSystemFont,
+"Segoe UI",
+"Roboto",
+"Helvetica Neue",
+Arial,
+sans-serif !default;
+$sans-serif: 'Heebo',
+-apple-system,
+system-ui,
+BlinkMacSystemFont,
+"Segoe UI",
+"Roboto",
+"Helvetica Neue",
+Arial,
+sans-serif !default;
+$hero-text: 'Heebo',
+sans-serif !default;
+$condensed-sans-serif: 'Oswald',
+-apple-system,
+system-ui,
+BlinkMacSystemFont,
+"Segoe UI",
+"Roboto",
+"Helvetica Neue",
+Arial,
+sans-serif !default;
+$monospace: Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
 $font__heading: $serif;
 $font__body: $sans-serif;
 $font__nav: $sans-serif;
 $font__form: $sans-serif;
 $font__lead: $sans-serif;
-
 // Font weights
 $font__weight-diet: 100;
 $font__weight-base: 300;
 $font__weight-strong: 600;
-
 $font__weight-heading: $font__weight-strong;
 $lead-font-size: 1.25rem !default;
 $lead-font-weight: 300 !default;
@@ -145,9 +146,8 @@ $lead-font-weight: 300 !default;
     Utilities
 -------------------------------------------*/
 
-$accent-border: 		1px solid rgba($accent-med, 0.4);
-$accent-border-thick: 	5px solid $accent-light;
-
+$accent-border: 1px solid rgba($accent-med, 0.4);
+$accent-border-thick: 5px solid $accent-light;
 // Z-Index Scale
 $zbot: -1;
 $zbase: 0;

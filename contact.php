@@ -9,7 +9,8 @@ get_header(); ?>
     <div class="row start-xs">
       <div class="col-lg-7">
         <h1><span class="greeting">Hello</span></h1>
-        <p class="lead">Let's talk. Send me an email <a href="mailto:<?php the_field( 'email', 'option' ); ?>" rel="nofollow" title="Email"><?php the_field( 'email', 'option' ); ?></a></p>
+        <p class="lead">Let's talk. I love to speak, and connect with great people. Send me an email <a href="mailto:<?php the_field( 'email', 'option' ); ?>" rel="nofollow" title="Email"><?php the_field( 'email', 'option' ); ?></a></p>
+        <p>Public key: 51EB 6533 48A7 4708 454C C5E9 2C11 CF42 A297 44AC</p>
 <br>
         <hr>
 

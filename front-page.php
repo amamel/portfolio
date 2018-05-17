@@ -3,6 +3,7 @@
 Template Name: Homepage
 */
 get_header(); ?>
+
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
 <section class="page--intro">
@@ -12,11 +13,9 @@ get_header(); ?>
       <div class="col-lg-9 col-md-11 col-sm-12 col-xs-12">
           <canvas id="pixie"></canvas>
         <h6><span class="greeting">Hello</span></h6>
-        <h1 class="hero-text">Designer and builder of digital experiences</h1>
-          <p style="max-width:700px; margin-bottom:30px;">UX Designer from Tampa, Florida. I specialize in crafting digital experiences. I balance product constraints and user-needs to create interfaces that feel natural and intuitive.</p>
-          <h5 style="margin-bottom: 200px;">
-            <a href="/resume">View Resume &rarr;</a>
-          </h5>
+        <h1 class="hero-text">Designer &amp; builder of digital experiences.</h1>
+          <p style="max-width:710px; margin-bottom:30px;">I’m a designer and front-end developer working at <a href="https://web.mit.edu/" rel="noopener noreferrer" target="_blank" title="Massachusetts Institute of Technology">MIT</a> in Cambridge, MA.</p>
+          <p style="max-width:710px;">I specialize in crafting digital experiences by balancing product constraints and user-needs, to create interfaces that feel natural and intuitive.</p>
           </div>
       </div>
 </div>
@@ -28,7 +27,7 @@ get_header(); ?>
     <h2>Projects</h2>
     <ul class="row">
       <?php while (have_rows('work_cards')) : the_row(); ?>
-      <li class="center-xs col-sm-6 col-xs-12">
+      <li class="center-xs col-sm-6 col-xs-12 no-bullets">
             <figure>
                 <?php $card_image = get_sub_field('card_image'); ?>
                 <?php if ($card_image) {
@@ -65,16 +64,13 @@ get_header(); ?>
 	<div class="container-fluid">
 		<div class="row center-xs">
 			<div class="col-lg-7 col-md-8 col-sm-11 col-xs-12">
-				<h4>Let's work together</h4>
-				<h3>Let's talk about your business, brand and project goals. We can build something fantastic, together.</h3>
-				<br/>
-
-				<h5><a href="/contact" class="c-btn">Get started</a></h5>
+				<h3 style="margin-bottom: 16px;">Let's Collaborate</h3>
+				<h4>Let's talk about your brand, business and project goals and create an intuitive, beautiful, and engaging product experience.</h4>
+				<a href="/contact" class="c-btn">Contact</a>
 			</div>
 		</div>
 	</div>
 </section>
 </main>
-</div>
 
 <?php get_footer(); ?>
